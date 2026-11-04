@@ -1,0 +1,288 @@
+ /* p {
+font-size: 50px ;
+color:rgb(143,5,241);
+}  */
+
+    
+     /* projrk web statis */
+
+
+
+ section {
+    min-height: 100vh;
+}
+h4 { font-size: 30px;
+      color: rgb(10, 10, 10);
+}
+article{ font-size: 20px;
+      color: rgb(255, 60, 0);
+}
+h3  { font-size: 40px;
+      color: rgb(0, 38, 255);}   
+   
+
+
+
+
+/* PLEXBOX */
+  
+
+
+/* section {
+      min-height: 100vh;
+}
+.kotakputih{
+      width: 290px;
+      height: 240px;
+      background-color:white;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start,;
+      border-style: solid;
+      border-width: 2px;
+      border-color: black;
+      flex-direction: row;
+      flex-wrap: wrap;
+}
+.kotakmerah {
+      width: 30px;
+      height: 50px;
+      background-color: red;
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}
+.kotakbiru {
+      width: 200px;
+      height: 50px;
+      background-color:blue;
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}
+.kotakkuning  {
+      width: 30px;
+      height: 50px;
+      background-color: rgb(255, 221, 0);
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}   
+.kotakmerah1 {
+      width: 170px;
+      height: 50px;
+      background-color: red;
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}
+.kotakbiru2 {
+      width: 30px;
+      height: 50px;
+      background-color:blue;
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}
+.kotakkuning3  {
+      width: 70px;
+      height: 50px;
+      background-color: rgb(255, 221, 0);
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}   
+.kotakmerah4 {
+      width: 30px;
+      height: 50px;
+      background-color: red;
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}
+.kotakbiru5 {
+      width: 60px;
+      height: 50px;
+      background-color:blue;
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}
+.kotakkuning6  {
+      width: 170px;
+      height: 50px;
+      background-color: rgb(255, 221, 0);
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}   
+.kotakmerah7 {
+      width: 60px;
+      height: 50px;
+      background-color: red;
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}
+.kotakbiru8 {
+      width: 30px;
+      height: 50px;
+      background-color:blue;
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}
+.kotakkuning9  {
+      width: 60px;
+      height: 50px;
+      background-color: rgb(255, 221, 0);
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}   
+.kotakbiru10 {
+      width: 30px;
+      height: 50px;
+      background-color:blue;
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}
+.kotakkuning11 {
+      width: 60px;
+      height: 50px;
+      background-color: rgb(255, 221, 0);
+      border-style: solid;
+      flex-direction: row;
+      border-width: 2px;
+}     */
+
+
+
+
+        /* TOKO BUKU */
+ 
+
+
+        /* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family; 'Segoe UI';
+        }
+
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        header h1 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1a5fa3;
+            margin-left: 20px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 30px 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        main h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        main p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+    
+        .kategori {
+            margin-bottom: 25px;
+        }
+
+        .kategori h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .kategori ul {
+            margin-left: 20px;
+        }
+
+        .kategori li {
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+     
+        .buku-pilihan h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .grid-buku {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .card h4 {
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .btn-beli {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-beli:hover {
+            background-color: #f0f0f0;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 13px;
+            color: #777;
+            margin-top: 30px;
+        }
+     */
+

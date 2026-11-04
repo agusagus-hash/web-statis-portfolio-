@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #edfde6;
+            /* warna pink seperti di foto */
+            width: 550px;
+            padding: 25px 30px;
+            border: 1px solid #e0c0c5;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 22px;
+        }
+
+        .form-row {
+            display: flex;
+            margin-bottom: 12px;
+            align-items: flex-start;
+        }
+
+        .form-row label {
+            width: 140px;
+            font-size: 14px;
+            padding-top: 5px;
+        }
+
+        .form-row input[type="text"],
+        .form-row input[type="email"],
+        .form-row input[type="password"],
+        .form-row select,
+        .form-row textarea {
+            border: 1px solid #aaa;
+            padding: 4px 6px;
+            font-size: 13px;
+        }
+
+        .w-300 {
+            width: 300px;
+        }
+
+        .w-130 {
+            width: 130px;
+        }
+
+        .w-60 {
+            width: 60px;
+        }
+
+        .small-text {
+            font-size: 11px;
+            font-style: italic;
+            margin-left: 5px;
+        }
+
+        .gender,
+        .dept {
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .btn-area {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .btn-area button {
+            padding: 3px 12px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<div class="form-container">
+    <h2>Formulir Pendaptaran Siswa</h2>
+
+    <form>
+        <div class="form-row">
+            <label>no. induk/NIS. :</label>
+            <input type="text" class="w-300">
+        </div>
+
+        <div class="form-row">
+            <label>Nama Siswa :</label>
+            <input type="text" placeholder="Nama Depan" class="w-130">
+            <span style="margin: 0 5px;">-</span>
+            <input type="text" placeholder="Nama Belakang" class="w-130">
+        </div>
+
+        <div class="form-row">
+            <label>Nama Ayah :</label>
+            <input type="text" class="w-300">
+        </div>
+
+        <div class="form-row">
+            <label>Tanggal Lahir :</label>
+            <input type="text" placeholder="Hari" class="w-60">
+            <input type="text" placeholder="Bulan" class="w-60" style="margin-left:5px;">
+            <input type="text" placeholder="Tahun" class="w-60" style="margin-left:5px;">
+            <span class="small-text">(DD-MM-YYYY)</span>
+        </div>
+
+        <div class="form-row">
+            <label>No. HP :</label>
+            <input type="text" value="+62 -" style="width:35px;">
+            <input type="text" class="w-300" style="margin-left:5px; width: 255px;">
+        </div>
+
+        <div class="form-row">
+            <label>Alamat Email :</label>
+            <input type="email" class="w-300">
+        </div>
+
+        <div class="form-row">
+            <label>Kata Sandi :</label>
+            <input type="Kata Sandi" class="w-300">
+        </div>
+
+        <div class="form-row">
+            <label>Jenis Kelamin :</label>
+            <div class="Jenis Kelamin">
+                <input type="radio" name="Jenis Kelamin"> Laki-Laki
+                <input type="radio" name="Jenis Kelamin" style="margin-left:10px;"> Perempuan
+            </div>
+        </div>
+
+        <div class="form-row">
+            <label>Jurusan :</label>
+            <div class="dept">
+                <input type="checkbox"> CSE
+                <input type="checkbox"> IT
+                <input type="checkbox"> ECE
+                <input type="checkbox"> Civil
+                <input type="checkbox"> Mech
+            </div>
+        </div>
+
+        <div class="form-row">
+            <label>Course :</label>
+            <select class="w-300">
+                <option>----------- Select Current Course's -----------</option>
+                <option>B.Tech</option>
+                <option>BCA</option>
+                <option>MCA</option>
+                <option>Diploma</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label>Student photo :</label>
+            <input type="file">
+        </div>
+
+        <div class="form-row">
+            <label>City :</label>
+            <input type="text" class="w-300">
+        </div>
+
+        <div class="form-row">
+            <label>Address :</label>
+            <textarea rows="3" class="w-300"></textarea>
+        </div>
+
+        <div class="btn-area">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tugas Membuat Form and Table</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif
+        }
+
+        body {
+            background: #eef2f7;
+            padding: 20px
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .1);
+            overflow: hidden
+        }
+
+        .form-section {
+            background: #f0f6ff;
+            border: 1px solid #cdd9f0;
+            border-radius: 8px;
+            margin: 15px;
+            padding: 15px
+        }
+
+        .form-title {
+            font-weight: bold;
+            background: #d9e6ff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: -15px -15px 15px -15px
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 25px
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px
+        }
+
+        input[type=text],
+        input[type=date],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px
+        }
+
+        .btn {
+            padding: 7px 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer
+        }
+
+        .btn-primary {
+            background: #2a5bd7;
+            color: #fff
+        }
+
+        .btn-secondary {
+            background: #f1f1f1;
+            border: 1px solid #ccc
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px
+        }
+
+        th {
+            background: #eef3ff;
+            padding: 8px;
+            text-align: left
+        }
+
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #eee
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-section">
+            <div class="form-title">👥 Tambah Data Siswa</div>
+            <div class="form-grid">
+                <div>
+                    <label>NIS</label><input type="text" id="nis" placeholder="Masukkan NIS">
+                    <label style="margin-top:10px">Nama Lengkap</label><input type="text" id="nama"
+                        placeholder="Masukkan nama lengkap">
+                    <label style="margin-top:10px">Kelas</label>
+                    <select id="kelas">
+                        <option value="">Pilih kelas</option>
+                        <option>X RPL 1</option>
+                        <option>X RPL 2</option>
+                        <option>X RPL 3</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Jenis Kelamin</label>
+                    <label><input type="radio" name="jk" value="Laki-laki" checked> Laki-laki</label>
+                    <label><input type="radio" name="jk" value="Perempuan"> Perempuan</label>
+                    <label style="margin-top:10px">Tanggal Lahir</label><input type="date" id="tgl">
+                </div>
+            </div>
+            <div style="margin-top:15px"><button class="btn btn-primary" onclick="simpanData()">+ Simpan</button>
+                <button class="btn btn-secondary" onclick="resetForm()">Reset</button></div>
+        </div>
+
+        <div style="margin:15px">
+            <b>📋 Data Siswa</b> <input type="text" id="search" placeholder="Cari nama atau NIS..."
+                onkeyup="renderTable()" style="float:right;padding:6px;border:1px solid #ccc;border-radius:6px">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>NIS</th>
+                        <th>Nama Lengkap</th>
+                        <th>Kelas</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let data = [
+            { NIS: '001', nama: 'Andi Setiawan', kelas: 'X RPL 1', jk: 'Laki-laki', tgl: '2008-01-15' },
+            { NIS: '002', nama: 'Budi Santoso', kelas: 'X RPL 1', jk: 'Laki-laki', tgl: '2008-03-22' },
+            { NIS: '003', nama: 'Citra Lestari', kelas: 'X RPL 2', jk: 'Perempuan', tgl: '2008-07-10' },
+            { NIS: '004', nama: 'Deri Pratama', kelas: 'X RPL 2', jk: 'Laki-laki', tgl: '2008-09-05' },
+            { NIS: '005', nama: 'Elsa Wijaya', kelas: 'X RPL 3', jk: 'Perempuan', tgl: '2008-11-15' },
+        ];
+        let editIndex = -1;
+        function renderTable() {
+            const k = document.getElementById('search').value.toLowerCase();
+            const f = data.filter(d => d.NIS.toLowerCase().includes(k) || d.nama.toLowerCase().includes(k));
+            document.getElementById('tbody').innerHTML = f.map((d, i) => `<tr><td>${i + 1}</td><td>${d.NIS}</td><td>${d.nama}</td><td>${d.kelas}</td><td>${d.jk}</td><td>${d.tgl}</td><td><button onclick="editData(${i})">✎</button> <button onclick="hapusData(${i})">🗑</button></td></tr>`).join('');
+        }
+        function simpanData() {
+            const obj = { NIS: nis.value, nama: nama.value, kelas: kelas.value, jk: document.querySelector('input[name=jk]:checked').value, tgl: tgl.value };
+            if (!obj.NIS || !obj.nama || !obj.kelas || !obj.tgl) return alert('Lengkapi data!');
+            if (editIndex > -1) data[editIndex] = obj; else data.push(obj);
+            resetForm(); renderTable();
+        }
+        function editData(i) { let d = data[i]; nis.value = d.NIS; nama.value = d.nama; kelas.value = d.kelas; document.querySelector(`input[name=jk][value="${d.jk}"]`).checked = true; tgl.value = d.tgl; editIndex = i; }
+        function hapusData(i) { if (confirm('Hapus?')) { data.splice(i, 1); renderTable(); } }
+        function resetForm() { nis.value = ''; nama.value = ''; kelas.value = ''; tgl.value = ''; editIndex = -1; }
+        renderTable();
+    </script>
+</body>
+
+</html>
